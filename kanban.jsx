@@ -1,3 +1,4 @@
+// teste ok!!!
 import Header from '../componentes/Header';
 import ListaTarefas from '../componentes/ListaTarefas';
 import { useState, useEffect } from 'react';
@@ -7,19 +8,12 @@ const URL_API = 'https://[seu-id].mockapi.io/tarefas';
 
 function Kanban() {
 
-    const [tarefas, setTarefas] = 
-  useState([]);
-    const [carregando, 
-  setCarregando] = useState(true);
-    const [erro, setErro] = 
-  useState('');
-    
-    const [texto, setTexto] =
-  useState('');
-    const [prioridade, setPrioridade] =
-  useState('media');
-    const [cep, setCep] =
-    useState('');
+    const [tarefas, setTarefas] = useState([]);
+    const [carregando, setCarregando] = useState(true);
+    const [erro, setErro] = useState('');
+    const [texto, setTexto] = useState('');
+    const [prioridade, setPrioridade] = useState('media');
+    const [cep, setCep] =useState('');
     
     useEffect(() => {
       async function carregarTarefas() {
@@ -117,7 +111,7 @@ function Kanban() {
  
   return (
     <>                                                  
-    <Header titulo="TaskFlow" tarefas={tarefas} />
+    <Header titulo="TaskFlow" subtitulo="Gerencie suas tarefas" tarefas={tarefas} />
 
       <main className="container">
         <section id="formulario">                                                    
@@ -204,8 +198,7 @@ function Kanban() {
             />
           </div>
         </div>
-     
-      </main>
+    </main>
               
 
       <footer>
@@ -213,8 +206,9 @@ function Kanban() {
           TaskFlow &copy; 2026 &mdash; Prof. Alan Glei &mdash; SENAI CTGAS-ER
         </p>
       </footer>
+    
     </>
   );
-};
+}
 
 export default Kanban; 
